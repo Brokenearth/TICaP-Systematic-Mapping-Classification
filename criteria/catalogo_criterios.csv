@@ -1,0 +1,11 @@
+Código,Criterio de exclusión para título y abstract
+CE1,"El estudio no se desarrolla en el contexto de piscicultura, acuicultura productiva o cultivo de organismos acuáticos."
+CE2,"El estudio se enfoca en pesca extractiva, conservación, ecología acuática, oceanografía o limnología sin relación con sistemas de cultivo."
+CE3,"El estudio aborda aspectos biológicos, nutricionales, genéticos, fisiológicos, sanitarios o ambientales sin incorporación de TIC o tecnologías digitales."
+CE4,"El estudio menciona tecnologías digitales, pero estas no se aplican al contexto piscícola o acuícola."
+CE5,"El estudio no presenta herramienta, modelo, prototipo, sistema, arquitectura, plataforma, método computacional o aplicación tecnológica concreta."
+CE6,"El estudio corresponde a revisión de literatura, revisión bibliométrica, editorial, perspectiva, artículo conceptual u opinión, sin estudio primario o validación empírica."
+CE7,"El estudio se aplica exclusivamente a organismos no piscícolas, como crustáceos, moluscos o algas, y no presenta transferencia explícita a piscicultura."
+CE8,"El uso de software o análisis de datos es únicamente instrumental y no representa el aporte principal del estudio."
+CE9,"El título y el resumen no permiten identificar relación clara con piscicultura/acuicultura ni con tecnologías digitales aplicadas."
+CE10,"El estudio no se relaciona con ninguna categoría temática del mapeo: monitoreo ambiental, automatización, alimentación, sanidad, crecimiento, trazabilidad, calidad, gestión productiva, IA, IoT, Big Data o Blockchain."

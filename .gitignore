@@ -1,0 +1,83 @@
+# ==============================================================================
+# .gitignore - TICaP Mapeo Sistemático
+# Configuración conservadora para repositorio Git
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Datos del corpus, resultados y entregables (Confidencial / No publicar)
+# ------------------------------------------------------------------------------
+TICaP-509/data/
+TICaP-509/output/
+TICaP-509/logs/
+TICaPALL/
+data/
+output/
+logs/
+output/revision_manual/
+scripts/screening_reasons.py
+
+# ------------------------------------------------------------------------------
+# 2. Formatos bibliográficos, hojas de cálculo, documentos binarios y datos
+# ------------------------------------------------------------------------------
+*.bib
+*.xlsx
+*.xls
+*.jsonl
+*.pdf
+
+# ------------------------------------------------------------------------------
+# 3. Conversaciones históricas y transcripciones de contexto privado
+# ------------------------------------------------------------------------------
+docs/
+docs/ai-context/
+cursor_reproducible_workflow_plan.md
+
+# ------------------------------------------------------------------------------
+# 4. Secretos, credenciales, tokens y certificados
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+credentials*
+secrets*
+
+# ------------------------------------------------------------------------------
+# 5. Entornos locales, editores e IDEs
+# ------------------------------------------------------------------------------
+.cursor/
+.gemini/
+.idea/
+.vscode/
+
+# ------------------------------------------------------------------------------
+# 6. Python, caches y entornos virtuales
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# ------------------------------------------------------------------------------
+# 7. Archivos generados por el Sistema Operativo
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------------------------------------------------------
+# 8. Reglas de Antigravity (Versionar exclusivamente las reglas)
+# ------------------------------------------------------------------------------
+.agents/*
+!.agents/rules/
