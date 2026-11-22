@@ -163,39 +163,35 @@ Re-ejecución completa del pipeline sobre los 170 registros para verificar repro
 
 ---
 
-### S-008 — Sesión de trazabilidad y bitácora con Antigravity (2026-11-21)
-**Periodo:** 2026-11-21T19:15 — (en curso)  
-**Fase:** Gestión de trazabilidad y mantenimiento del repositorio  
-**Agente:** `AGENTE_IA` (Antigravity/Gemini)
+### S-008 — Sesión de trazabilidad, bitácora y sincronización inter-fases (2026-11-21)
+**Periodo:** 2026-11-21T19:15 — 2026-11-21T19:35  
+**Fase:** Gestión de trazabilidad y gobernanza multi-proyecto  
+**Agente:** `AGENTE_IA` (Antigravity)
 
-**Actividades:**
-1. Revisión del estado del repositorio local y remoto GitHub.
-2. Identificación de información sin publicar que no compromete datos privados.
-3. Creación de la bitácora oficial de trazabilidad (`BITACORA.md`).
-4. Preparación de actualizaciones para publicar en GitHub.
+**Actividades ejecutadas:**
+1. Auditoría del repositorio local y remoto GitHub de Fase 1.
+2. Creación de la bitácora oficial de trazabilidad (`BITACORA.md`).
+3. Creación de `CHANGELOG.md` documentando versiones v0.1.0 a v1.0.0.
+4. Actualización del `README.md` con badges, resultados consolidados y estructura de gobernanza.
+5. Inclusión de `scripts/export_zotero.py` en el repositorio público (sin datos sensibles).
+6. **Establecimiento del puente de comunicación inter-proyecto (`PUENTE_FASES.md`):**
+   - Se formalizó la separación entre Fase 1 (cribado y selección PRISMA, 509 registros) y Fase 2 (clasificación temática multidimensional de los 229 estudios incluidos, en repo separado `Brokenearth/TICaP-Thematic-Classification`).
+   - Se definió el contrato de datos inmutable sobre `TICaP_Zotero_01_Incluidos_229.bib` (SHA-256 `3061574178b087d6a1d179eaaf37c52ea713e5b128868216d012faa864978a89`).
+   - Se actualizaron las reglas de contexto (`.agents/rules/project-context.md`) para evitar invasión de alcances entre agentes.
 
-**Archivos identificados como pendientes de publicación (sin datos sensibles):**
-- `BITACORA.md` (este archivo) — nueva bitácora de trazabilidad.
-- `CHANGELOG.md` — historial de versiones del pipeline.
-- Actualización de `README.md` con estado actual del análisis temático pendiente.
-
-**Archivo local sin versionar detectado:**
-- `scripts/export_zotero.py` — pendiente de revisión para publicación.
+**Artefactos publicados en GitHub:**
+- Commit: `df6b058 — docs: bitácora, changelog y README mejorado — Fase 1 (cribado 509 registros)`
 
 ---
 
-## Estado de la siguiente fase (pendiente)
+## Estado de la siguiente fase (Fase 2 — Repositorio independiente)
 
-Según `PROJECT_STATE.md` (§19), el próximo paso metodológico es:
-
-> **Análisis temático y síntesis cuantitativa sobre los 229 registros con decisión INCLUIR**
-
-Actividades pendientes:
-- [ ] Tabulación de frecuencias por `Categoría temática`, `Tecnología identificada`, `Aplicación acuícola/piscícola`.
-- [ ] Análisis de evolución temporal 2020–2025.
-- [ ] Generación del diagrama PRISMA 2020 visual (SVG/PNG/Mermaid).
-- [ ] Gráficos de distribución de tecnologías y aplicaciones.
-- [ ] Redacción de sección metodológica del manuscrito.
+La siguiente etapa del estudio corresponde a la **Fase 2 (Clasificación temática)**, alojada en el repositorio independiente [`Brokenearth/TICaP-Thematic-Classification`](https://github.com/Brokenearth/TICaP-Thematic-Classification):
+- [x] Base congelada de 229 registros creada.
+- [x] Taxonomía y clasificación preliminar por palabras clave generada.
+- [ ] Revisión humana del piloto (20 registros en `data/manual/piloto_para_revision.csv`).
+- [ ] Revisión del 20% adicional de estudios.
+- [ ] Cierre reproducible F7 y exportaciones finales.
 
 ---
 
