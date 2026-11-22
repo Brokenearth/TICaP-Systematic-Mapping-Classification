@@ -80,9 +80,59 @@ El agente debe validar que cualquier texto o tabla en LaTeX coincida estrictamen
 
 ---
 
-## 5. Reglas de Salida para Overleaf (Formato LaTeX)
+## 5. Reglas Estrictas de Estilo, Voz y Gramática (Patrón del Autor)
 
-* **Entornos limpios:** Emplear sintaxis estándar de LaTeX compatible con paquetes comunes (`booktabs`, `amsmath`, `graphicx`, `hyperref`, `cite`).
+A partir de la inspección de la redacción ya existente en el manuscrito en Overleaf, el agente **debe apegarse rigurosamente** a las siguientes pautas lingüísticas y convenciones:
+
+1. **Persona Gramatical y Voz:**
+   - **Primera persona del plural activa (plural de modestia / equipo de investigación):** El autor utiliza consistentemente expresiones como:
+     - *"el grupo de investigadores analizamos el periodo..."*
+     - *"consideramos que el periodo adecuado..."*
+     - *"presentamos nuestras preguntas de investigación..."*
+     - *"hemos planteado las siguientes preguntas específicas..."*
+     - *"hemos realizado este mapeo de estudios..."*
+     - *"describimos brevemente cada una de las etapas..."*
+   - **Voz pasiva refleja / impersonal para procedimientos metodológicos:**
+     - *"las preguntas de investigación fueron formuladas..."*
+     - *"se definió a partir del análisis previo..."*
+     - *"se aplicaron filtros para depurar los resultados..."*
+   - **PROHIBICIÓN:** Nunca utilizar primera persona del singular (*"analicé", "propongo"*).
+
+2. **Nomenclatura y Convenciones de Siglas Oficiales:**
+   - **`TICaP`**: Tecnologías de la Información y las Comunicaciones aplicadas a la Piscicultura.
+   - **`MS`**: Mapeo Sistemático.
+   - **`PG`**: Pregunta General (*PG. ¿Cuáles son las TICaP en el periodo 2020-2025?*).
+   - **`PE`**: Preguntas Específicas (*PE1: tendencias emergentes; PE2: enfoques metodológicos y resultados; PE3: distribución en las 6 áreas*).
+
+3. **Referencias Cruzadas y Comandos Internos:**
+   - Usar `\figref{etiqueta}` para figuras (ej. `\figref{MS-methodology}`).
+   - Usar `\secref{etiqueta}` para secciones (ej. `\secref{sec:ant}`).
+   - Usar `\tabref{etiqueta}` para tablas.
+   - Citas bibliográficas en el texto: seguir la convención de autor-año de la revista (`authoryear`).
+
+---
+
+## 6. REGLA INVIOLABLE: INTEGRIDAD DEL FORMATO Y PLANTILLA RIAI
+
+> [!CAUTION]
+> **POR NINGÚN MOTIVO SE DEBE MODIFICAR EL FORMATO, CLASE O PLANTILLA DE OVERLEAF.**
+
+1. **Plantilla oficial:** El proyecto utiliza la plantilla oficial de la **Revista Iberoamericana de Automática e Informática Industrial (RIAI)**:
+   - Clase: `\documentclass[5p,times,authoryear]{RIAIarticle}`
+   - Estilos: `crc_RIAI.sty`, `elsarticle-harv.bst`.
+   - Compilador obligatorio: **PDFLaTeX** (no usar XeLaTeX ni LuaLaTeX).
+2. **Prohibición de alterar el preámbulo:** No modificar márgenes, fuentes, espaciados, metadatos de cabecera de RIAI ni redefinir comandos de la revista.
+3. **Punto exacto de inserción en `main.tex`:**
+   - La redacción original del autor avanza hasta la línea ~462 en `\subsection{Todos los artículos}`.
+   - A partir de la línea ~465 comienza el texto de ejemplo/relleno de la plantilla RIAI (`\subsection{Inserción de tablas}`, `\subsection{Ecuaciones}`, apéndices de muestra).
+   - El nuevo contenido redactado (Fase de Cribado, Diagrama PRISMA, Resultados de Clasificación) debe reemplazar dicho texto de relleno **sin tocar la estructura de cierre del documento** (`\bibliography{...}`, `\end{document}`).
+4. **Manejo de Tablas Anchas:** Dado que el formato es a 2 columnas (`5p`), si se incluye una tabla ancha (como la de criterios CE1–CE10 o la matriz PRISMA), se debe utilizar el entorno `table*` (con asterisco) o salir temporalmente del entorno de columnas según el estándar de RIAI, sin romper el flujo de lectura.
+
+---
+
+## 7. Reglas de Salida para Overleaf (Formato LaTeX)
+
+* **Entornos limpios:** Emplear sintaxis estándar de LaTeX compatible con los paquetes ya cargados en la plantilla RIAI (`booktabs`, `amsmath`, `graphicx`, `hyperref`, `cite`).
 * **Tablas profesionales:** Usar exclusivamente `\toprule`, `\midrule`, `\bottomrule`; no usar líneas verticales (`|`).
 * **Citas bibliográficas:** Cuando cites ejemplos de estudios específicos del corpus, emplea las claves de citación estables `\cite{TICAP-XXXX}`.
-* **Entrega:** Generar bloques de código `.tex` completos y auto-contenidos para que el usuario pueda copiarlos y pegarlos directamente en su archivo principal (ej. `methodology.tex` o `results.tex`).
+* **Entrega modular:** Generar bloques de código `.tex` completos y listos para reemplazar las subsecciones pendientes en `main.tex`.
