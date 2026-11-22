@@ -48,6 +48,7 @@ El agente debe validar que cualquier texto o tabla en LaTeX coincida estrictamen
 * **Estudios excluidos:** 261 registros (cada uno respaldado por un criterio CE1–CE10).
 * **Estudios incluidos en la síntesis temática:** **229 estudios**.
 * **Dudosos pendientes:** 0 (todos resueltos y auditados).
+* **Gestor bibliográfico oficial del proyecto:** **Zotero** (se reemplazó a Mendeley). Todas las colecciones oficiales del mapeo, deduplicación y exportaciones temáticas (`TICaP_Zotero_Master_509.bib`, `TICaP_Zotero_01_Incluidos_229.bib`) fueron estructuradas y administradas en Zotero.
 
 ---
 
@@ -58,7 +59,8 @@ El agente debe validar que cualquier texto o tabla en LaTeX coincida estrictamen
 2. **Criterios de Elegibilidad:** Construir una tabla en LaTeX (`booktabs`) que liste los criterios de exclusión CE1 a CE10 a partir de `criteria/catalogo_criterios.csv`.
 3. **Flujo de Selección PRISMA:** Generar el diagrama de flujo PRISMA 2020 utilizando código LaTeX (`tikz` o mediante una tabla estructurada paso a paso) reflejando:
    - Identificación (509) → Deduplicación (-18) y Tipo no admitido (-1) → Cribado por título/abstract (490) → Excluidos (-261) → Incluidos para síntesis cualitativa/cuantitativa (**229**).
-4. **Reproducibilidad y Trazabilidad:** Describir brevemente que el proceso fue orquestado con pipelines automatizados deterministas, validación con pruebas unitarias y congelación con hashes SHA-256 (referenciar el repositorio abierto).
+4. **Herramienta de Gestión Bibliográfica (Zotero):** En la sección de depuración (alrededor de la línea ~462 de `main.tex`, donde el borrador original mencionaba a Mendeley), actualizar la redacción para declarar formalmente que los artículos recuperados y el corpus final fueron organizados y gestionados con **Zotero**, respaldado por los scripts de exportación automatizados del repositorio (`scripts/export_zotero.py`).
+5. **Reproducibilidad y Trazabilidad:** Describir brevemente que el proceso fue orquestado con pipelines automatizados deterministas, validación con pruebas unitarias y congelación con hashes SHA-256 (referenciar el repositorio abierto).
 
 ### Sección B: Resultados y Clasificación Temática
 1. **Distribución por Áreas Productivas (OE1):**
